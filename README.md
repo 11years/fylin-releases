@@ -1,2 +1,26 @@
-# fylin-releases
-Fylin for Windows. Binary releases and documentation only; no application source code.
+# Fylin（フィリン）
+
+Windows向けの個人用ファイルマネージャー。垂直タブと自動グループ、グループホーム、お気に入り・閉じた履歴、Vim風キー操作、スクリプト実行に対応しています。
+
+このリポジトリは配布専用です。アプリのソースコードや開発履歴は含みません。
+
+## ダウンロードと起動
+
+[最新リリース](https://github.com/11years/fylin-releases/releases/latest)から `Fylin-<version>-Windows-x64.zip` を取得し、書き込み可能な任意のフォルダに展開して `Fylin.exe` を起動してください。インストーラーは不要です。exe単体でも起動しますが、再配布時は第三者ライセンスの案内も添付してください。
+
+Windows x64とMicrosoft Edge WebView2 Runtimeが必要です。Runtimeがない場合は[Microsoftの公式配布](https://developer.microsoft.com/microsoft-edge/webview2/)を利用してください。
+
+## 設定と更新
+
+- 設定・タブ・履歴は `%APPDATA%\local.personal.filer` に保存します。exeと一緒に移動する形式ではありません。旧Filerから同じ保存先を引き継ぎます。
+- 左端の歯車 →「更新」で手動確認できます。起動時の自動確認も切り替えられます。
+- 新版が見つかったら「更新して再起動」で取得します。署名とハッシュを検証し、状態を保存して終了後にexeを置き換えます。
+- 同じexeを複数起動している場合や、ファイル操作中は更新を中止します。exeのフォルダに書き込み権限が必要です。
+- 更新失敗時は旧exeへの復旧を試みます。退避物・結果はexeの隣の `.filer-update-*` に残します。自動削除は行いません。更新完了を確認した後、不要な古い退避フォルダを手動で整理できます。
+- 更新用の暗号署名とWindowsの発行元署名は別物です。現版にはAuthenticode署名は付けていません。
+
+設定の持ち出しは設定画面の「持ち出し」から行えます。タブ・履歴・個人パスは設定エクスポートに含みません。
+
+## ライセンス
+
+第三者コンポーネントの表示とライセンス本文は `THIRD-PARTY-NOTICES.txt` を参照してください。Fylin本体のソースを公開するライセンスを付与するものではありません。
